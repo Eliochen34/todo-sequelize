@@ -5,3 +5,7 @@ Desktop.ini
 node_modules
 *.log
 *.gz
+
+.DS_Store*
+Icon?
+._*
