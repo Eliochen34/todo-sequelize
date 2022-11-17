@@ -23,6 +23,13 @@ app.get('/', (req, res) => {
     .then((todos) => { return res.render('index', { todos: todos }) })
     .catch((error) => { return res.status(422).json(error) })
 })
+app.get('/todos/:id', (req, res) => {
+  const id = req.params.id
+  return Todo.findByPk(id)
+    .then(todo => res.render('detail', { todo: todo.toJSON() }))
+    .catch(err => console.log(err))
+})
+
 app.get('/users/login', (req, res) => {
   res.render('login')
 })
@@ -40,6 +47,7 @@ app.post('/users/register', (req, res) => {
 app.get('/users/logout', (req, res) => {
   res.send('logout')
 })
+
 
 
 app.listen(PORT, () => {
