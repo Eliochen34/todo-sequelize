@@ -1,7 +1,7 @@
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
+.env
 node_modules
 *.log
 *.gz
